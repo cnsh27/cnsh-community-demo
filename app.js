@@ -18,7 +18,7 @@ app.use(express.static(require('path').join(__dirname, 'public')));
 app.use(session({
     resave: false,
     saveUninitialized: false,
-    secret: "pyh",
+    secret: process.env.SESSION_SECRET,
     cookie: {
       httpOnly: true,
       secure: false
