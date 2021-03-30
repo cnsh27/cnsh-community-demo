@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('./models/User');
 
 const callbackURL = `https://cnsh-community-demo2.herokuapp.com/auth/google/callback`;
 
@@ -8,11 +9,10 @@ module.exports = () => {
         done(null, user.id);
     });
     passport.deserializeUser(function (id, done){
-        const user = {
-            userID: id,
-            username: "chamwhy",
-            description: "안녕하세요"
-        };
+        User.findById(id, (err, user) => {
+            if(err) throw err;
+            return done(null, user);
+        });
         return done(null, user);
     });
 
@@ -22,12 +22,16 @@ module.exports = () => {
         callbackURL: callbackURL
     },
         (accessToken, refreshToken, profile, done) => {
-            const user = {
-                userID: "sjfjaiejwo32kfjd0",
-                username: "chamwhy",
-                description: "안녕하세요"
-            };
-            return done(null, user);
+            User.findById(profile.id, (err, user) => {
+                if(err) throw err;
+                return done(null, user);
+            });
+            // const user = {
+            //     userID: "sjfjaiejwo32kfjd0",
+            //     username: "chamwhy",
+            //     description: "안녕하세요"
+            // };
+            
         }
     ));
 }
