@@ -2,11 +2,13 @@ require('dotenv').config();
 
 const express = require('express');
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 const app = express();
 const cors = require('cors');
 const passport = require('passport');
 const route = require('./config/route');
 const passportconfig = require('./config/passport');
+
 
 
 app.use(cors());
@@ -19,6 +21,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET,
+    store: new FileStore(),
     cookie: {
       httpOnly: true,
       secure: false
