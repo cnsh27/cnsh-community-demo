@@ -1,0 +1,32 @@
+{
+  "name": "cnsh-community-demo",
+  "version": "1.0.0",
+  "description": "충남과학고 게시판 데모 버전입니다. 테스트용을 제작중이며, 적용될 지는 정해지지 않은 상태입니다",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "passport": "^0.4.1",
+    "passport-google-oauth": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnsh27/cnsh-community-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cnsh27/cnsh-community-demo/issues"
+  },
+  "homepage": "https://github.com/cnsh27/cnsh-community-demo#readme"
+}
