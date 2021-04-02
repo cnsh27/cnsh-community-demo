@@ -32,13 +32,13 @@ app.use(express.static(require('path').join(__dirname, 'public')));
 
 const options = {
   mongoUrl: process.env.MONGO_URL,
-
 };
+
 app.use(session({
+    store: MongoStore.create(options),
     resave: false,
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET,
-    store: MongoStore.create(options),
     cookie: {
       httpOnly: true,
       secure: false
