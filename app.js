@@ -38,7 +38,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET,
-    // store: MongoStore.create(options),
+    store: MongoStore.create(options),
     cookie: {
       httpOnly: true,
       secure: false
