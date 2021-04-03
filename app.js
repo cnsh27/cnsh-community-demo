@@ -31,7 +31,7 @@ app.set("view engine", "ejs");
 app.use(express.static(require('path').join(__dirname, 'public')));
 
 const options = {
-  mongoUrl: process.env.MONGO_URL,
+  mongoUrl: process.env.MONGO_URL+'/session',
 };
 
 app.use(session({
