@@ -1,7 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/User');
 
-const callbackURL = `/auth/google/callback`;
+const callbackURL = `https://cnsh-community-demo2.herokuapp.com/auth/google/callback`;
 
 module.exports = (passport) => {
     passport.serializeUser(function (user, done){
