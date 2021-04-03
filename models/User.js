@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const UserModel = new mongoose.Schema({
     gID: { type: String, required: true },
-    name: { type: Number, required: true },
+    name: { type: String, required: true },
     isStudent: { type: Boolean, required: true },
     stNum: {
         num: { type: Number },
