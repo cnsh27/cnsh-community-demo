@@ -1,7 +1,7 @@
 
 
 module.exports = (mongoose) => {
-    mongoose.connect(process.env.MONGO_URL, {dbName: 'admin', useNewUrlParser: true, useUnifiedTopology: true}, {
+    mongoose.connect(process.env.MONGO_URL, {dbName: 'test', useNewUrlParser: true, useUnifiedTopology: true}, {
         useNewUrlParser: true, 
         useUnifiedTopology: true,
         useFindAndModify: true
