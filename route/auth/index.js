@@ -15,7 +15,10 @@ auth.get('/google/callback',
 
 auth.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/');
+  req.session.destroy(err => {
+    if(err) throw err;
+    res.redirect('/');
+  });
 });
 
 module.exports = auth;
