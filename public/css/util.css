@@ -2,6 +2,9 @@
 a{
     text-decoration: none;
 }
+ul, ol{
+    list-style: none;
+}
 
 .flex{
     display: flex;
@@ -25,6 +28,9 @@ a{
 
 .max-x{
     max-width: 60rem;
+    width: 100%;
+}
+.max-x-all{
     width: 100%;
 }
 
@@ -56,6 +62,10 @@ a{
 /* article */
 .article{
     border-radius: 1rem;
-    box-shadow: 0 4px 5px 3px gray;
-    width: 100%;
+    box-shadow: 0 0 8px 1px rgb(231, 231, 231);
+    padding: 1.5rem;
+    transition: .2s;
+}
+.article:hover{
+    box-shadow: 0 0 20px 1px rgb(231, 231, 231);
 }

@@ -1,3 +1,28 @@
 <div class="article">
-    안녕하세요
+    <div class="flex flex-center flex-column setting">
+        <div class="profile">
+            <img src="<%= article.profile.avartarURL %>" alt="user">
+            <h3 class="username"><%= article.profile.username %></h3>
+            <div class="roles">
+                <% article.profile.roles.forEach(role => { %>
+                    <%- include('./role', { roleClass: role.class, roleName: role.name}) %>
+                <% }); %>
+            </div>
+            <div class="createdAt"><%= new Date(article.profile.createdAt).toLocaleString() %></div>
+        </div>
+    </div>
+    <div class="content">
+        <%- article.content %>
+    </div>
+    <% if(isLogged) { %>
+        <div class="comentPlace">
+            <div class="comentInput">
+                <img class="" src="" alt="">
+                <form action="/api/comment/<%=article._id%>" method="post">
+                    <input type="text">
+                    <button type="submit">댓글</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
 </div>
