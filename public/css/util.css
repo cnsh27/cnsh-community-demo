@@ -52,3 +52,10 @@ a{
     border-color: rgb(61, 161, 255);
     background-color: rgb(160, 209, 255);
 }
+
+/* article */
+.article{
+    border-radius: 1rem;
+    box-shadow: 0 4px 5px 3px gray;
+    width: 100%;
+}

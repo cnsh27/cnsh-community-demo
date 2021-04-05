@@ -5,7 +5,5 @@
 ## 사용 모듈
 - nodejs
 - express
-- webpack
-- babel
-- PostgreSQL
+- ejs
 - passport

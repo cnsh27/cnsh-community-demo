@@ -9,17 +9,20 @@
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-    <%- include ('./base/header') %>
-    <%- include ('./base/side') %>
-    <div id="main" class="flex flex-column">
-        <div class="msg msg-error">학생 및 선생님들은 충남과학고등학교 전용 이메일로 로그인하기를 권장드립니다.</div>
-        <a id="loginBtn" href="/auth/google">sign in with google</a>
-        <ul>
-            <% for(let i = 0; i < 90; i++){ %>
-                <li>Hello World </li>
-            <% } %>
-        </ul>
+    <div id="wrap">
+        <%- include ('./base/header') %>
+        <%- include ('./base/side') %>
+        <div id="main" class="flex flex-column">
+            <div class="msg msg-error">학생 및 선생님들은 충남과학고등학교 전용 이메일로 로그인하기를 권장드립니다.</div>
+            <a id="loginBtn" href="/auth/google">sign in with google</a>
+            <ul>
+                <% for(let i = 0; i < 90; i++){ %>
+                    <li>Hello World </li>
+                <% } %>
+            </ul>
+        </div>
+        <%- include ('./base/bottom') %>
     </div>
-    <%- include ('./base/bottom') %>
+    
 </body>
 </html>
