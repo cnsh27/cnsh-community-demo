@@ -1,15 +1,19 @@
 <header>
     <div class="flex flex-center flex-middle">
-        <div class="flex flex-center flex-between max-x">
+        <div class="flex flex-center max-x">
             <div id="logo"><a href="/"><img src="/img/logo.png" alt="cnsh-community"></a></div>
             <div id="headerMenu" class="flex flex-row">
                 <div class="headerItem"><a href="/">홈</a></div>
                 <div class="headerItem"><a href="/class">클래스</a></div>
                 <div class="headerItem"><a href="/unknown">익명게시판</a></div>
             </div>
-            <div id="loginLinkBtn">
-                <a href="/login">로그인</a>
-            </div>
+            <% if(isLogged){ %>
+            
+            <% }else{ %>
+                <div id="loginLinkBtn">
+                    <a href="/login">로그인</a>
+                </div>
+            <% } %>
         </div>
     </div>
 </header>

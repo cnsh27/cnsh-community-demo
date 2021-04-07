@@ -22,9 +22,9 @@ module.exports = (passport) => {
             const newUser = {
                 gID: profile.id,
                 name: profile.displayName,
-                isStudent: false,
-                articles: []
+                isStudent: false
             }
+
             try{
                 let user = await User.findOne({ gID: profile.id })
 

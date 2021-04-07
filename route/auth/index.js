@@ -13,12 +13,10 @@ auth.get('/google/callback',
     }
 );
 
-auth.get('/logout', (req, res) => {
-  req.logout();
-  req.session.destroy(err => {
-    if(err) throw err;
-    res.redirect('/');
-  });
+auth.get('/logout', async (req, res) => {
+  await req.logout();
+  await req.session.destroy();
+  await res.redirect('/');
 });
 
 module.exports = auth;

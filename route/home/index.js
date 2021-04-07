@@ -11,7 +11,8 @@ function isLoggedIn(req, res, next) {
 
 home.get('/', (req, res) => {
     res.render('index', {
-        isLogged: true
+        isLogged: true,
+        user: req.session
     });
 });
 

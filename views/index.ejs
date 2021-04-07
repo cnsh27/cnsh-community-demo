@@ -9,7 +9,13 @@
 </head>
 <body>
     <div id="wrap">
-        <%- include ('./base/header') %>
+        <%- include ('./base/header', { 
+            isLogged: isLogged, 
+            user: {
+                username: user.username,
+                avartarURL: user.avartarURL
+            } 
+        }) %>
         <%- include ('./base/side') %>
         <div id="main" class="flex flex-center">
             <div class="max-x">
