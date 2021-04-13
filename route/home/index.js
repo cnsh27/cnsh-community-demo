@@ -1,22 +1,72 @@
 const express = require('express');
 const home = express.Router();
+const middleware = require('../../config/middleware');
 
-function isLoggedIn(req, res, next) {
-    if(req.isAuthenticated()){
-        req.isLogged = true;
-        return next();
-    }
-    res.redirect('/');
-}
 
-home.get('/', (req, res) => {
+const a = {
+    article: {
+        profile: {
+            avartarURL: 'default_avartar.png',
+            username: 'chamwhy',
+            roles: [
+                {
+                    class: 'adminrole',
+                    name: '관리자'
+                },
+                {
+                    class: 'teacherrole',
+                    name: '선생님'
+                }
+            ],
+            createdAt: Date.now()
+        },
+        content: '테스트 용으로 제작된 겁니다.\<strong>헬로우\</strong>'
+    },
+    comments: [
+        {
+            profile: {
+                avartarURL: 'default_avartar.png',
+                username: 'chamwhy'
+            },
+            comment: '테스트용 코멘트입니다. 안녕하세요',
+            createdAt: Date.now()
+        },
+        {
+            profile: {
+                avartarURL: 'default_avartar.png',
+                username: 'chamwhy'
+            },
+            comment: '테스트용 코멘트입니다. 안녕하세요',
+            createdAt: Date.now()
+        },
+        {
+            profile: {
+                avartarURL: 'default_avartar.png',
+                username: 'chamwhy'
+            },
+            comment: '테스트용 코멘트입니다. 안녕하세요',
+            createdAt: Date.now()
+        },
+        {
+            profile: {
+                avartarURL: 'default_avartar.png',
+                username: 'chamwhy'
+            },
+            comment: '테스트용 코멘트입니다. 안녕하세요',
+            createdAt: Date.now()
+        }
+    ]
+};
+
+home.get('/', middleware.isLoggedIn, (req, res) => {
     res.render('index', {
-        isLogged: true,
-        user: req.session
+        isLogged: req.isLogged,
+        user: req.session,
+        a: a
     });
 });
 
-home.get('/login', isLoggedIn, (req, res)=>{
+home.get('/login', middleware.isLoggedIn, (req, res)=>{
     res.render('login', {
         isLogged: req.isLogged
     });

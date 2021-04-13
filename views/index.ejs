@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cnsh community</title>
+    <title>추노인 - cnshin</title>
     <%- include ('./base/head') %>
 </head>
 <body>
@@ -17,40 +17,24 @@
             } 
         }) %>
         <%- include ('./base/side') %>
-        <div id="main" class="flex flex-center">
+        <%- include ('./base/bottom') %>
+        <div id="main" class="flex flex-center flex-middle">
             <div class="max-x">
-                <a href="/login">로그인</a>
-                
                 <br><br>
                 <ul id="articleList" class="max-x">
                     <li>
-                        <%- include('./component/article', {
-                            article: {
-                                profile: {
-                                    avartarURL: '',
-                                    username: 'chamwhy',
-                                    roles: [
-                                        {
-                                            class: 'adminrole',
-                                            name: '관리자'
-                                        },
-                                        {
-                                            class: 'teacher',
-                                            name: '선생님'
-                                        }
-                                    ],
-                                    createdAt: Date.now()
-                                },
-                                content: '테스트 용으로 제작된 겁니다.\<strong>으하하하하ㅏ\</strong>'
-                            }
-                        }) %>
+                        <%- include ('./component/article', Object.assign(a, {isLogged: isLogged})) %>
+                    </li>
+                    <li>
+                        
                     </li>
                 </ul>
             </div>
         </div>
         
-        <%- include ('./base/bottom') %>
+        
     </div>  
     <script src="/js/util.js"></script>
+    <script src="/js/home.js"></script>
 </body>
 </html>

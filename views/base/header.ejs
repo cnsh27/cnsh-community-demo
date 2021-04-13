@@ -7,13 +7,18 @@
                 <div class="headerItem"><a href="/class">클래스</a></div>
                 <div class="headerItem"><a href="/unknown">익명게시판</a></div>
             </div>
-            <% if(isLogged){ %>
+            <div id="authmenu" class="flex flex-center">
+                <% if(isLogged){ %>
+                    <div id="logoutBtn">
+                        <a href="/auth/logout">로그아웃</a>
+                    </div>
+                <% }else{ %>
+                    <div id="loginLinkBtn">
+                        <a href="/login">로그인</a>
+                    </div>
+                <% } %>
+            </div>
             
-            <% }else{ %>
-                <div id="loginLinkBtn">
-                    <a href="/login">로그인</a>
-                </div>
-            <% } %>
         </div>
     </div>
 </header>

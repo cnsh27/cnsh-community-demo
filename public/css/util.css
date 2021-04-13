@@ -4,6 +4,16 @@ a{
 }
 ul, ol{
     list-style: none;
+    padding: 0;
+}
+input{
+    outline: 0;
+}
+
+.disappear{
+    display: none;
+    height: 0;
+    opacity: 0;    
 }
 
 .flex{
@@ -69,3 +79,97 @@ ul, ol{
 .article:hover{
     box-shadow: 0 0 20px 1px rgb(231, 231, 231);
 }
+.article .username{
+    font-weight: 600;
+    padding: 0 1rem 5px .8rem;
+}
+.article .avartar{
+    width: 2rem;
+}
+.article .content{
+    padding: 3rem 0 3rem 1rem;
+}
+.commentCnt{
+    /* padding-bottom: 1rem; */
+}
+.comentPlace{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    transition: .4s;
+}
+.comentPlace form{
+    width: 100%;
+}
+.comentPlace .profile{
+    width: 2rem;
+    margin-right: 2rem;
+}
+.comentPlace input{
+    flex-grow: 1;
+    width: 100%;
+    padding: .8rem;
+    border: 2px solid rgb(180, 180, 180);
+    border-radius: 100rem;
+}
+.comentPlace button{
+    width: 2rem !important;
+    height: 2rem !important;
+    border: 0;
+    outline: 0;
+    border-radius: 100rem;
+    margin-left: 1rem;
+    padding: .4rem;
+    background-color: rgb(76, 182, 231);
+    color: white;
+}
+.comments{
+    padding-top: 1rem;
+    transition: .4s;
+}
+.commentToggleBtn{
+    outline: 0;
+    border: 0;
+    background-color: white;
+    transition: .2s;
+}
+.commentToggleBtn:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+
+/* roles */
+
+.role{
+    margin-left: .6rem;
+    font-weight: 600;
+    border-radius: 100rem;
+    font-size: .7rem;
+    padding: 5px 15px 5px 15px;
+}
+.teacherrole{
+    border: 1px solid rgb(0, 153, 255);
+    background-color: rgb(197, 232, 255);
+    color: rgb(0, 153, 255);
+}
+.adminrole{
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(255, 212, 212);
+    color: rgb(255, 0, 0);
+}
+
+.createdAt{
+    color: rgb(192, 192, 192);
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+/* comment */
+.comment .profile img{
+    width: 2rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+.comment .content{
+    padding: 0;
+}
+

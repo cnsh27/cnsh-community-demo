@@ -1,0 +1,9 @@
+<li class="flex flex-center comment">
+    <div class="profile">
+        <a href="/user/<%=commentdata.profile.username%>"><img src="/img/avartar/<%=commentdata.profile.avartarURL%>" alt="<%=commentdata.profile.username%> avartar"></a>
+    </div>
+    <div class="content">
+        <%- commentdata.comment %>
+    </div>
+    <div class="createdAt"><%= new Date(commentdata.createdAt).toLocaleString() %></div>
+</li>

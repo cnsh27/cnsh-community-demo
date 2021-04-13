@@ -2,21 +2,22 @@ const express = require('express');
 const passport = require('passport');
 const auth = express.Router();
 
+
+
 auth.get('/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
+  passport.authenticate('google', { scope: ['profile', 'email'] })
 );
 
 auth.get('/google/callback', 
-    passport.authenticate('google', { failureRedirect: '/login' }),
-    (req, res) => {
-        res.redirect('/');
-    }
+  passport.authenticate('google', { successRedirect: '/', failureRedirect: '/login' }),
+  (req, res) => {
+    res.redirect('/');
+  }
 );
 
-auth.get('/logout', async (req, res) => {
-  await req.logout();
-  await req.session.destroy();
-  await res.redirect('/');
+auth.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = auth;

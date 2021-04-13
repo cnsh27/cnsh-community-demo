@@ -11,7 +11,6 @@ const contentValidator = [
 ];
 
 const ArticleModel = new mongoose.Schema({
-    _id: mongoose.Types.ObjectId,
     title: { type: String, required: true },
     content: { type: String, validate: contentValidator },
     by: mongoose.Types.ObjectId,

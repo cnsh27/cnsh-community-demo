@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const UserModel = new mongoose.Schema({
-    _id: { type: mongoose.Types.ObjectId, required: true },
     gID: { type: String, required: true },
     name: { type: String, required: true },
-    isStudent: { type: Boolean, required: true },
+    nickname: { type: String },
+    isSchool: { type: Boolean, required: true },
+    email: { type: String, required: true },
     stNum: {
         num: { type: Number },
         grade: Number,

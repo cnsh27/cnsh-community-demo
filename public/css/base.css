@@ -16,6 +16,9 @@ header{
     box-shadow: 0 2px 9px 1px rgb(150, 150, 150);
     margin-bottom: 2rem;
 }
+#headerMenu{
+    padding-left: 3rem;
+}
 .headerItem{
     margin-right: 2rem;
 }
@@ -23,7 +26,17 @@ header{
     color: black;
     font-weight: 500;
 }
+#authmenu{
+    margin-left: auto;
+}
+#loginLinkBtn{
+    margin-right: 1rem;
+}
 #loginLinkBtn a, #loginLinkBtn a:link, #loginLinkBtn a:visited, #loginLinkBtn a:hover{
+    color: black;
+    font-weight: 500;
+}
+#logoutBtn a, #logoutBtn a:link, #logoutBtn a:visited, #logoutBtn a:hover{
     color: black;
     font-weight: 500;
 }
