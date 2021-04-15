@@ -1,10 +1,17 @@
 const express = require('express');
 const passport = require('passport');
-const upload = express.Router();
+const uploadAPI = express.Router();
+const multer = require('multer');
 
+const uploadProfile = multer({ dest: 'upload/avartar/' });
+const uploadImg = multer({ dest: 'upload/img' });
 
-upload.get('/', (req, res) => {
-    res.send('upload');
+uploadAPI.post('/profile', uploadProfile.single(), (req, res) => {
+    res.send('uploadAPI');
 });
 
-module.exports = upload;
+uploadAPI.post('/img', uploadImg.array(), (req, res) => {
+    
+});
+
+module.exports = uploadAPI;

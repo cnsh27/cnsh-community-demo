@@ -1,6 +1,7 @@
 const express = require('express');
 const home = express.Router();
 const middleware = require('../../config/middleware');
+const ArticleModel = require('../../models/Article');
 
 
 const a = {
@@ -58,11 +59,12 @@ const a = {
     ]
 };
 
-home.get('/', middleware.isLoggedIn, (req, res) => {
+home.get('/', middleware.isLoggedIn, async (req, res) => {
+    const articles = await ArticleModel.find();
     res.render('index', {
         isLogged: req.isLogged,
         user: req.session,
-        a: a
+        articles: articles
     });
 });
 

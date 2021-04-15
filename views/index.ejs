@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>추노인 - cnshin</title>
+    <title>나정새 heart 차지우</title>
     <%- include ('./base/head') %>
 </head>
 <body>
@@ -22,12 +22,11 @@
             <div class="max-x">
                 <br><br>
                 <ul id="articleList" class="max-x">
-                    <li>
-                        <%- include ('./component/article', Object.assign(a, {isLogged: isLogged})) %>
-                    </li>
-                    <li>
-                        
-                    </li>
+                    <% articles.forEach(article => { %>
+                        <li>
+                            <%- include ('./component/article', Object.assign(article, {isLogged: isLogged})) %>
+                        </li>
+                    <% }); %>
                 </ul>
             </div>
         </div>

@@ -11,8 +11,7 @@ const contentValidator = [
 ];
 
 const ArticleModel = new mongoose.Schema({
-    title: { type: String, required: true },
-    content: { type: String, validate: contentValidator },
+    content: { type: String, validate: contentValidator, required: true },
     by: mongoose.Types.ObjectId,
     coments: [
         {
@@ -21,10 +20,6 @@ const ArticleModel = new mongoose.Schema({
             createdAt: { type: Date, default: Date.now }
         }
     ],
-    img: {
-        cdnUri: String,
-        files: []
-    },
     createdAt: { type: Date, default: Date.now }
 });
 
