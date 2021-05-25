@@ -44,6 +44,22 @@ header{
     padding-bottom: 5rem;
 }
 
+
+
+
+#side{
+    width: calc((100% - 60rem)/2 - 6rem);
+    max-width: 18rem;
+    background-color: rgb(240, 240, 240);
+    height: calc(100% - 15rem);
+    margin: 0 0 2rem 2rem;
+}
+@media screen and (max-width: 94rem) {
+    #side{
+        display: none;
+    }
+}
+
 footer{
     background-color: rgb(57, 103, 201);
     width: -webkit-fill-available;

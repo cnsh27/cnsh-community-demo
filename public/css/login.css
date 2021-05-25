@@ -1,14 +1,20 @@
 #loginBtn{
-    border: 1px solid rgb(39, 125, 255);
-    border-radius: 1rem;
-    background-color: white;
-    box-shadow: 0 2px 3px 1px rgb(39, 125, 255) ;
-    padding: 1rem;
-    color: black;
+    /* border: 1px solid rgb(39, 125, 255); */
+    border-radius: 2rem;
+    background-color: rgb(68, 107, 236);
+    box-shadow: 0 1px 2px 1px rgb(185, 185, 185) ;
+    margin-top: 10rem;
+    padding: 1rem 1rem 1.3rem 1rem;
+    color: white;
     font-size: 1.4rem;
     font-weight: bold;
+    width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
 }
 
 #loginBtn:hover{
-    
+    box-shadow: 0 2px 5px 3px rgb(185, 185, 185) ;
 }
